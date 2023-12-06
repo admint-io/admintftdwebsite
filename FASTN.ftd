@@ -21,7 +21,7 @@ favicon: https://admint.io/favicon.ico
 
 # Home: index.html
 
-# Why NFT?: why-nft/
+# Why NFTs?: why-nft/
 
 # About Us: about/
 
@@ -48,7 +48,7 @@ skip: true
 - Pricing🚧: docs/pricing/
 - Learn Page🚧: docs/faq/
 - FAQs & Accordion: docs/faq/
-- Brand campaign🚧: docs/brand-campaign/
+- Brand Campaigns🚧: docs/brand-campaign/
 - Advertising-web-3-0🚧: docs/advertising-web-3-0/
 - Blog🚧: docs/blog/
 - Terms & conditions🚧: docs/terms-conditions/
