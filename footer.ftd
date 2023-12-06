@@ -97,7 +97,7 @@ color: $inherited.colors.text
 margin-top.px: 80
 padding-left.px: 16
 
-/-- ftd.image:
+-- ftd.image:
 margin-right.px: 16
 $loop$: $footer.icons as $obj
 src: $obj.src
