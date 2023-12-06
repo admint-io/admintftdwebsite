@@ -2211,7 +2211,7 @@ width.fixed.px: 195
 margin-top.px: 44
 padding-left.px: 16
 
--- footer-list: $obj.title
+/-- footer-list: $obj.title
 $loop$: $footer-mobile.footer-links as $obj
 url: $obj.url
 is-active: $common.check-is-active(a=$footer-mobile.active-page, b=$obj.url)
@@ -2219,17 +2219,17 @@ is-active: $common.check-is-active(a=$footer-mobile.active-page, b=$obj.url)
 
 -- end: ftd.column
 
--- ftd.row:
+/-- ftd.row:
 margin-top.px: 80
 padding-left.px: 20
 
--- ftd.image:
+/-- ftd.image:
 margin-right.px: 10
 $loop$: $footer-mobile.social-links as $obj
 src: $obj.src
 link: $obj.link
 
--- end: ftd.row
+/-- end: ftd.row
 
 -- ftd.image:
 src: $footer-mobile.team-thumb
@@ -2260,7 +2260,7 @@ string identity-label:
 string org-label:
 string org-warning: Organization is required
 string email-label:
-string email-warning: Email is requied
+string email-warning: Email is required
 common.role-record list roles: $common.roles
 string cta-text:
 integer width: 1320
