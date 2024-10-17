@@ -21,13 +21,13 @@ favicon: https://admint.io/favicon.ico
 
 # Home: index.html
 
-# Why NFTs?: why-nft/
+# Brand Tokens: why-nft/
 
-# About Us: about/
+# Features: learn/
 
 # Pricing: pricing/
 
-# Learn: learn/
+# About Us: about/
 
 # Docs: docs/
 skip: true
@@ -42,7 +42,7 @@ skip: true
 - Sneak Peak: docs/sneak-peak/
 - Join waitlist form: docs/join-waitlist-form/
 - Join waitlist popup: docs/join-waitlist-popup/
-- Why NFT?🚧: docs/why-nfts/
+- Brand Tokens: docs/why-nfts/
 - About Us: docs/about-us/
 - Our Team: docs/our-team/
 - Pricing🚧: docs/pricing/
