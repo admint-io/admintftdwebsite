@@ -14,8 +14,8 @@
 
     
                 <script src="markdown-24E09EFC0C2B9A11DEA9AC71888EB3A1E85864FA7D9C95A3EB5075A0E0F49A5F.js"></script>
-                <script src="prism-8FE3A42AD547E2DBBC9FE16BA059F8F1870D613AD0C5B0B013D6205B72A62BAF.js"></script>
-                <script src="default-0835811AA91A671E9D30B9EE26629D7ABDB2CCD3052FC44A035FAC9038295D3C.js"></script>
+                <script src="prism-CA83672C9FB5C7D63C2C934C352CC777CD7A3ADFDA7E61DCCF80CAF1EF35FB49.js"></script>
+                <script src="default-38D06177940AE6731D39995D3433E35D62BC5B2551FD2B4D5CFA3565D45C4C95.js"></script>
                 <link rel="stylesheet" href="prism-73F718B9234C00C5C14AB6A11BF239A103F0B0F93B69CD55CB5C6530501182EB.css">
                 
             
@@ -83,6 +83,15 @@ table {
     border-style: solid;
     height: auto;
     width: auto;
+}
+
+/**
+This is needed since the global css makes `text-decoration: none`.
+To ensure that the del element's `text-decoration: line-through` is applied,
+we need to add `!important` to the rule
+**/
+del {
+    text-decoration: line-through !important;
 }
 
 *, pre, div {
@@ -358,6 +367,756 @@ td {
 	.__mb-22 { margin-bottom: 10px; }
 	.__mxw-23 { max-width: 800px; }
     </style><style>
+
+
+
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 100;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-100-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 100;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-100-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 100;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-100-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-100-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 100;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-100-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-100-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 100;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-100-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 200;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-200-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 200;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-200-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-200-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-200-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 200;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-200-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-200-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 200;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-200-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 300;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-300-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 300;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-300-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-300-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-300-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 300;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-300-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-300-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 300;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-300-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 400;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-400-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 400;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-400-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-400-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-400-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 400;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-400-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-400-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 400;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-400-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 500;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-500-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 500;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-500-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-500-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-500-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 500;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-500-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-500-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 500;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-500-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 600;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-600-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 600;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-600-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-600-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-600-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 600;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-600-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-600-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 600;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-600-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 700;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-700-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 700;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-700-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-700-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-700-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 700;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-700-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-700-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 700;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-700-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 800;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-800-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 800;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-800-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-800-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-800-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 800;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-800-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-800-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 800;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-800-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 900;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-900-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 900;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-900-normal-cyrillic.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-900-normal-greek-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-900-normal-greek.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 900;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-900-normal-vietnamese.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-900-normal-latin-ext.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 900;
+src: url(-/fastn-community.github.io/inter-font/static/Inter-900-normal-latin.woff2) format('woff2');
+font-family: fastn-community-github-io-inter-font-Inter }
+
+
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-100-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-100-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-100-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-100-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-100-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-100-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-100-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-200-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-200-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-200-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-200-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-200-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-200-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-200-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-300-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-300-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-300-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-300-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-300-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-300-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-300-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-400-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-400-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-400-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-400-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-400-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-400-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-400-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-500-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-500-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-500-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-500-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-500-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-500-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-500-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-600-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-600-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-600-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-600-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-600-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-600-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-600-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-700-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-700-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-700-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-700-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-700-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-700-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-700-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-800-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-800-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-800-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-800-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-800-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-800-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-800-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-900-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-900-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-900-normal-greek-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-900-normal-greek.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-900-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-900-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/inter-font/static/Inter-900-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-inter-font-Inter }
+
+
+
+
+
+
+
+
+
+
+
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 100;
+src: url(-/lato-font.fifthtry.site/static/Lato-100-italic-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 100;
+src: url(-/lato-font.fifthtry.site/static/Lato-100-italic-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 300;
+src: url(-/lato-font.fifthtry.site/static/Lato-300-italic-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 300;
+src: url(-/lato-font.fifthtry.site/static/Lato-300-italic-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 400;
+src: url(-/lato-font.fifthtry.site/static/Lato-400-italic-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 400;
+src: url(-/lato-font.fifthtry.site/static/Lato-400-italic-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 700;
+src: url(-/lato-font.fifthtry.site/static/Lato-700-italic-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 700;
+src: url(-/lato-font.fifthtry.site/static/Lato-700-italic-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 900;
+src: url(-/lato-font.fifthtry.site/static/Lato-900-italic-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 900;
+src: url(-/lato-font.fifthtry.site/static/Lato-900-italic-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/lato-font.fifthtry.site/static/Lato-100-normal-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 100;
+src: url(-/lato-font.fifthtry.site/static/Lato-100-normal-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/lato-font.fifthtry.site/static/Lato-300-normal-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 300;
+src: url(-/lato-font.fifthtry.site/static/Lato-300-normal-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/lato-font.fifthtry.site/static/Lato-400-normal-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 400;
+src: url(-/lato-font.fifthtry.site/static/Lato-400-normal-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/lato-font.fifthtry.site/static/Lato-700-normal-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 700;
+src: url(-/lato-font.fifthtry.site/static/Lato-700-normal-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/lato-font.fifthtry.site/static/Lato-900-normal-latin-ext.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 900;
+src: url(-/lato-font.fifthtry.site/static/Lato-900-normal-latin.woff2) format('woff2');
+font-family: lato-font-fifthtry-site-Lato }
+
+
+
+
 
 
 
@@ -948,6 +1707,14 @@ font-stretch: 100%;
 src: url(-/fastn-community.github.io/opensans-font/static/Open-Sans-800-normal-latin.woff2) format('woff2');
 font-family: fastn-community-github-io-opensans-font-Open-Sans }
 
+
+
+
+
+
+
+
+
 @font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 font-style: italic;
 font-weight: 100;
@@ -1369,6 +2136,1225 @@ font-weight: 900;
 src: url(-/fastn-community.github.io/roboto-font/static/Roboto-900-normal-latin.woff2) format('woff2');
 font-family: fastn-community-github-io-roboto-font-Roboto }
 
+@font-face { font-display: swap;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-Bold.2814ea037527bd21c35a.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito }
+@font-face { font-display: swap;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-Regular.17d6fb4cbd2d4a010f50.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito }
+@font-face { font-display: swap;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-SemiBold.404b1d8521611e076ddd.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito }
+@font-face { font-display: swap;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Inter-Bold.645621da4d850caa525b.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-200-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-300-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-400-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-400-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-400-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-400-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-400-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-500-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-600-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-700-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-800-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-900-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 1000;
+src: url(-/fifthtry.github.io/admint-nunito-font/static/Nunito-1000-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-admint-nunito-font-Nunito-live }
+
+
+
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-italic-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-italic-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-italic-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-italic-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: italic;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-italic-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 100;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-100-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 200;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-200-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 300;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-300-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 400;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-400-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 500;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-500-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 600;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-600-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 700;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-700-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 800;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-800-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-normal-cyrillic-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-normal-cyrillic.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-normal-vietnamese.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-normal-latin-ext.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 900;
+src: url(-/fifthtry.github.io/montserrat/static/Montserrat-900-normal-latin.woff2) format('woff2');
+font-family: fifthtry-github-io-montserrat-Montserrat }
+
+
+
+
+
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 100;
+src: url(-/inter-font.fifthtry.site/static/Inter-100-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 100;
+src: url(-/inter-font.fifthtry.site/static/Inter-100-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 100;
+src: url(-/inter-font.fifthtry.site/static/Inter-100-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/inter-font.fifthtry.site/static/Inter-100-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 100;
+src: url(-/inter-font.fifthtry.site/static/Inter-100-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 100;
+src: url(-/inter-font.fifthtry.site/static/Inter-100-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 100;
+src: url(-/inter-font.fifthtry.site/static/Inter-100-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 200;
+src: url(-/inter-font.fifthtry.site/static/Inter-200-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 200;
+src: url(-/inter-font.fifthtry.site/static/Inter-200-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 200;
+src: url(-/inter-font.fifthtry.site/static/Inter-200-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/inter-font.fifthtry.site/static/Inter-200-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 200;
+src: url(-/inter-font.fifthtry.site/static/Inter-200-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 200;
+src: url(-/inter-font.fifthtry.site/static/Inter-200-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 200;
+src: url(-/inter-font.fifthtry.site/static/Inter-200-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 300;
+src: url(-/inter-font.fifthtry.site/static/Inter-300-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 300;
+src: url(-/inter-font.fifthtry.site/static/Inter-300-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 300;
+src: url(-/inter-font.fifthtry.site/static/Inter-300-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/inter-font.fifthtry.site/static/Inter-300-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 300;
+src: url(-/inter-font.fifthtry.site/static/Inter-300-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 300;
+src: url(-/inter-font.fifthtry.site/static/Inter-300-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 300;
+src: url(-/inter-font.fifthtry.site/static/Inter-300-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 400;
+src: url(-/inter-font.fifthtry.site/static/Inter-400-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 400;
+src: url(-/inter-font.fifthtry.site/static/Inter-400-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 400;
+src: url(-/inter-font.fifthtry.site/static/Inter-400-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/inter-font.fifthtry.site/static/Inter-400-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 400;
+src: url(-/inter-font.fifthtry.site/static/Inter-400-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 400;
+src: url(-/inter-font.fifthtry.site/static/Inter-400-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 400;
+src: url(-/inter-font.fifthtry.site/static/Inter-400-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 500;
+src: url(-/inter-font.fifthtry.site/static/Inter-500-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 500;
+src: url(-/inter-font.fifthtry.site/static/Inter-500-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 500;
+src: url(-/inter-font.fifthtry.site/static/Inter-500-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/inter-font.fifthtry.site/static/Inter-500-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 500;
+src: url(-/inter-font.fifthtry.site/static/Inter-500-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 500;
+src: url(-/inter-font.fifthtry.site/static/Inter-500-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 500;
+src: url(-/inter-font.fifthtry.site/static/Inter-500-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 600;
+src: url(-/inter-font.fifthtry.site/static/Inter-600-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 600;
+src: url(-/inter-font.fifthtry.site/static/Inter-600-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 600;
+src: url(-/inter-font.fifthtry.site/static/Inter-600-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/inter-font.fifthtry.site/static/Inter-600-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 600;
+src: url(-/inter-font.fifthtry.site/static/Inter-600-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 600;
+src: url(-/inter-font.fifthtry.site/static/Inter-600-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 600;
+src: url(-/inter-font.fifthtry.site/static/Inter-600-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 700;
+src: url(-/inter-font.fifthtry.site/static/Inter-700-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 700;
+src: url(-/inter-font.fifthtry.site/static/Inter-700-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 700;
+src: url(-/inter-font.fifthtry.site/static/Inter-700-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/inter-font.fifthtry.site/static/Inter-700-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 700;
+src: url(-/inter-font.fifthtry.site/static/Inter-700-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 700;
+src: url(-/inter-font.fifthtry.site/static/Inter-700-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 700;
+src: url(-/inter-font.fifthtry.site/static/Inter-700-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 800;
+src: url(-/inter-font.fifthtry.site/static/Inter-800-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 800;
+src: url(-/inter-font.fifthtry.site/static/Inter-800-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 800;
+src: url(-/inter-font.fifthtry.site/static/Inter-800-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/inter-font.fifthtry.site/static/Inter-800-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 800;
+src: url(-/inter-font.fifthtry.site/static/Inter-800-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 800;
+src: url(-/inter-font.fifthtry.site/static/Inter-800-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 800;
+src: url(-/inter-font.fifthtry.site/static/Inter-800-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+font-style: normal;
+font-weight: 900;
+src: url(-/inter-font.fifthtry.site/static/Inter-900-normal-cyrillic-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+font-style: normal;
+font-weight: 900;
+src: url(-/inter-font.fifthtry.site/static/Inter-900-normal-cyrillic.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+1F00-1FFF;
+font-style: normal;
+font-weight: 900;
+src: url(-/inter-font.fifthtry.site/static/Inter-900-normal-greek-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0370-03FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/inter-font.fifthtry.site/static/Inter-900-normal-greek.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+font-style: normal;
+font-weight: 900;
+src: url(-/inter-font.fifthtry.site/static/Inter-900-normal-vietnamese.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+font-style: normal;
+font-weight: 900;
+src: url(-/inter-font.fifthtry.site/static/Inter-900-normal-latin-ext.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+@font-face { unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-style: normal;
+font-weight: 900;
+src: url(-/inter-font.fifthtry.site/static/Inter-900-normal-latin.woff2) format('woff2');
+font-family: inter-font-fifthtry-site-Inter }
+
 
 </style>
 <script>
@@ -1377,7 +3363,7 @@ font-family: fastn-community-github-io-roboto-font-Roboto }
   let __fastn_super_package_name__ = __fastn_package_name__;
   __fastn_package_name__ = "admint_io";
   try {
-    let parenti0 = admint_io_404___not_found_page(parent, inherited, {
+    let parenti0 = admint_io_404__not_found_page(parent, inherited, {
       title: "Oops, looks like the page is lost.",
       body: "This is not a fault, just an accident that was not intentional."
     });
@@ -1386,426 +3372,687 @@ font-family: fastn-community-github-io-roboto-font-Roboto }
   }
 }
 global["main"] = main;
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__base_", fastn.recordInstance({
-  light: "#faf8f4",
-  dark: "#faf8f4"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__step_1_", fastn.recordInstance({
-  light: "#FFFFFF",
-  dark: "#FFFFFF"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__step_2_", fastn.recordInstance({
-  light: "#f4f4f4",
-  dark: "#f4f4f4"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__overlay_", fastn.recordInstance({
-  light: "rgba(0, 0, 0, 0.3)",
-  dark: "rgba(0, 0, 0, 0.3)"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__code_", fastn.recordInstance({
-  light: "#eaeaea",
-  dark: "#2B303B"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__background_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__base_,
-  step_1: global.fifthtry_github_io_admint_cs_colors__step_1_,
-  step_2: global.fifthtry_github_io_admint_cs_colors__step_2_,
-  overlay: global.fifthtry_github_io_admint_cs_colors__overlay_,
-  code: global.fifthtry_github_io_admint_cs_colors__code_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__border_", fastn.recordInstance({
-  light: "#3fb488",
-  dark: "#3fb488"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__border_strong_", fastn.recordInstance({
-  light: "#D9D9D9",
-  dark: "#3e0306"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__text_", fastn.recordInstance({
-  light: "#7d8180",
-  dark: "#7d8180"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__text_strong_", fastn.recordInstance({
-  light: "#7d8180",
-  dark: "#7d8180"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__shadow_", fastn.recordInstance({
-  light: "#6f0100",
-  dark: "#6f0100"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__scrim_", fastn.recordInstance({
-  light: "#393939",
-  dark: "#393939"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_base_", fastn.recordInstance({
-  light: "#3fb488",
-  dark: "#3fb488"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_hover_", fastn.recordInstance({
-  light: "#8c2702",
-  dark: "#8c2702"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_pressed_", fastn.recordInstance({
-  light: "#611c03",
-  dark: "#611c03"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_disabled_", fastn.recordInstance({
-  light: "#faad7b",
-  dark: "#faad7b"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_focused_", fastn.recordInstance({
-  light: "#611c03",
-  dark: "#611c03"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_border_", fastn.recordInstance({
-  light: "#a53006",
-  dark: "#a53006"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_text_", fastn.recordInstance({
-  light: "#FFFFFF",
-  dark: "#FFFFFF"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_text_disabled_", fastn.recordInstance({
-  light: "#FFFFFF",
-  dark: "#FFFFFF"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_border_disabled_", fastn.recordInstance({
-  light: "#a53006",
-  dark: "#a53006"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__cta_primary_base_,
-  hover: global.fifthtry_github_io_admint_cs_colors__cta_primary_hover_,
-  pressed: global.fifthtry_github_io_admint_cs_colors__cta_primary_pressed_,
-  disabled: global.fifthtry_github_io_admint_cs_colors__cta_primary_disabled_,
-  focused: global.fifthtry_github_io_admint_cs_colors__cta_primary_focused_,
-  border: global.fifthtry_github_io_admint_cs_colors__cta_primary_border_,
-  border_disabled: global.fifthtry_github_io_admint_cs_colors__cta_primary_border_disabled_,
-  text: global.fifthtry_github_io_admint_cs_colors__cta_primary_text_,
-  text_disabled: global.fifthtry_github_io_admint_cs_colors__cta_primary_text_disabled_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_base_", fastn.recordInstance({
-  light: "#EF8435",
-  dark: "#EF8435"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_hover_", fastn.recordInstance({
-  light: "#D77730",
-  dark: "#D77730"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_pressed_", fastn.recordInstance({
-  light: "#BF6A2A",
-  dark: "#BF6A2A"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_disabled_", fastn.recordInstance({
-  light: "#777777",
-  dark: "#777777"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_focused_", fastn.recordInstance({
-  light: "#B36328",
-  dark: "#B36328"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_border_", fastn.recordInstance({
-  light: "#F3A063",
-  dark: "#F3A063"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_text_", fastn.recordInstance({
-  light: "#FFFFFF",
-  dark: "#FFFFFF"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_text_disabled_", fastn.recordInstance({
-  light: "#FFFFFF",
-  dark: "#FFFFFF"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_border_disabled_", fastn.recordInstance({
-  light: "#F3A063",
-  dark: "#F3A063"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__cta_secondary_base_,
-  hover: global.fifthtry_github_io_admint_cs_colors__cta_secondary_hover_,
-  pressed: global.fifthtry_github_io_admint_cs_colors__cta_secondary_pressed_,
-  disabled: global.fifthtry_github_io_admint_cs_colors__cta_secondary_disabled_,
-  focused: global.fifthtry_github_io_admint_cs_colors__cta_secondary_focused_,
-  border: global.fifthtry_github_io_admint_cs_colors__cta_secondary_border_,
-  border_disabled: global.fifthtry_github_io_admint_cs_colors__cta_secondary_border_disabled_,
-  text: global.fifthtry_github_io_admint_cs_colors__cta_secondary_text_,
-  text_disabled: global.fifthtry_github_io_admint_cs_colors__cta_secondary_text_disabled_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_base_", fastn.recordInstance({
-  light: "#EBE8E5",
-  dark: "#EBE8E5"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_hover_", fastn.recordInstance({
-  light: "#D4D1CE",
-  dark: "#D4D1CE"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_pressed_", fastn.recordInstance({
-  light: "#BCBAB7",
-  dark: "#BCBAB7"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_disabled_", fastn.recordInstance({
-  light: "#F9F8F7",
-  dark: "#F9F8F7"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_focused_", fastn.recordInstance({
-  light: "#B0AEAC",
-  dark: "#B0AEAC"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_border_", fastn.recordInstance({
-  light: "#B0AEAC",
-  dark: "#B0AEAC"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_text_", fastn.recordInstance({
-  light: "#333333",
-  dark: "#333333"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_text_disabled_", fastn.recordInstance({
-  light: "#333333",
-  dark: "#333333"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_border_disabled_", fastn.recordInstance({
-  light: "#B0AEAC",
-  dark: "#B0AEAC"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_base_,
-  hover: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_hover_,
-  pressed: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_pressed_,
-  disabled: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_disabled_,
-  focused: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_focused_,
-  border: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_border_,
-  border_disabled: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_border_disabled_,
-  text: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_text_,
-  text_disabled: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_text_disabled_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_base_", fastn.recordInstance({
-  light: "#f9e4e1",
-  dark: "#f9e4e1"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_hover_", fastn.recordInstance({
-  light: "#f1bdb6",
-  dark: "#f1bdb6"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_pressed_", fastn.recordInstance({
-  light: "#d46a63",
-  dark: "#d46a63"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_disabled_", fastn.recordInstance({
-  light: "#faeceb",
-  dark: "#faeceb"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_focused_", fastn.recordInstance({
-  light: "#d97973",
-  dark: "#d97973"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_border_", fastn.recordInstance({
-  light: "#e9968c",
-  dark: "#E9968C"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_text_", fastn.recordInstance({
-  light: "#FFFBFE",
-  dark: "#1C1B1F"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_text_disabled_", fastn.recordInstance({
-  light: "#FFFBFE",
-  dark: "#1C1B1F"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_border_disabled_", fastn.recordInstance({
-  light: "#e9968c",
-  dark: "#E9968C"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__cta_danger_base_,
-  hover: global.fifthtry_github_io_admint_cs_colors__cta_danger_hover_,
-  pressed: global.fifthtry_github_io_admint_cs_colors__cta_danger_pressed_,
-  disabled: global.fifthtry_github_io_admint_cs_colors__cta_danger_disabled_,
-  focused: global.fifthtry_github_io_admint_cs_colors__cta_danger_focused_,
-  border: global.fifthtry_github_io_admint_cs_colors__cta_danger_border_,
-  border_disabled: global.fifthtry_github_io_admint_cs_colors__cta_danger_border_disabled_,
-  text: global.fifthtry_github_io_admint_cs_colors__cta_danger_text_,
-  text_disabled: global.fifthtry_github_io_admint_cs_colors__cta_danger_text_disabled_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_primary_", fastn.recordInstance({
-  light: "#a53006",
-  dark: "#a53006"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_secondary_", fastn.recordInstance({
-  light: "#EF8435",
-  dark: "#EF8435"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_tertiary_", fastn.recordInstance({
-  light: "#ffc136",
-  dark: "#ffc136"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_", fastn.recordInstance({
-  primary: global.fifthtry_github_io_admint_cs_colors__accent_primary_,
-  secondary: global.fifthtry_github_io_admint_cs_colors__accent_secondary_,
-  tertiary: global.fifthtry_github_io_admint_cs_colors__accent_tertiary_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_base_", fastn.recordInstance({
-  light: "#F9E4E1",
-  dark: "#F9E4E1"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_text_", fastn.recordInstance({
-  light: "#D84836",
-  dark: "#D84836"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_border_", fastn.recordInstance({
-  light: "#E9968C",
-  dark: "#E9968C"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_btb_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__error_base_,
-  text: global.fifthtry_github_io_admint_cs_colors__error_text_,
-  border: global.fifthtry_github_io_admint_cs_colors__error_border_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_base_", fastn.recordInstance({
-  light: "#DCEFE4",
-  dark: "#DCEFE4"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_text_", fastn.recordInstance({
-  light: "#3E8D61",
-  dark: "#3E8D61"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_border_", fastn.recordInstance({
-  light: "#95D0AF",
-  dark: "#95D0AF"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_btb_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__success_base_,
-  text: global.fifthtry_github_io_admint_cs_colors__success_text_,
-  border: global.fifthtry_github_io_admint_cs_colors__success_border_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__info_base_", fastn.recordInstance({
-  light: "#DAE7FB",
-  dark: "#DAE7FB"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__info_btb_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__info_base_,
-  text: global.fifthtry_github_io_admint_cs_colors__info_base_,
-  border: global.fifthtry_github_io_admint_cs_colors__info_base_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_base_", fastn.recordInstance({
-  light: "#FDF7F1",
-  dark: "#FDF7F1"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_text_", fastn.recordInstance({
-  light: "#E78B3E",
-  dark: "#E78B3E"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_border_", fastn.recordInstance({
-  light: "#F2C097",
-  dark: "#F2C097"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_btb_", fastn.recordInstance({
-  base: global.fifthtry_github_io_admint_cs_colors__warning_base_,
-  text: global.fifthtry_github_io_admint_cs_colors__warning_text_,
-  border: global.fifthtry_github_io_admint_cs_colors__warning_border_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_one_", fastn.recordInstance({
-  light: "#000000",
-  dark: "#000000"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_two_", fastn.recordInstance({
-  light: "#c8c8c8",
-  dark: "#c8c8c8"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_three_", fastn.recordInstance({
-  light: "#c9efde",
-  dark: "#c9efde"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_four_", fastn.recordInstance({
-  light: "#3fb488",
-  dark: "#3fb488"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_five_", fastn.recordInstance({
-  light: "#eb57be",
-  dark: "#eb57be"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_six_", fastn.recordInstance({
-  light: "#ef8dd6",
-  dark: "#ef8dd6"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_seven_", fastn.recordInstance({
-  light: "#7564be",
-  dark: "#7564be"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_eight_", fastn.recordInstance({
-  light: "#d554b3",
-  dark: "#d554b3"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_nine_", fastn.recordInstance({
-  light: "#54595f",
-  dark: "#54595f"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_ten_", fastn.recordInstance({
-  light: "#0a0a0a",
-  dark: "#0a0a0a"
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_", fastn.recordInstance({
-  one: global.fifthtry_github_io_admint_cs_colors__custom_one_,
-  two: global.fifthtry_github_io_admint_cs_colors__custom_two_,
-  three: global.fifthtry_github_io_admint_cs_colors__custom_three_,
-  four: global.fifthtry_github_io_admint_cs_colors__custom_four_,
-  five: global.fifthtry_github_io_admint_cs_colors__custom_five_,
-  six: global.fifthtry_github_io_admint_cs_colors__custom_six_,
-  seven: global.fifthtry_github_io_admint_cs_colors__custom_seven_,
-  eight: global.fifthtry_github_io_admint_cs_colors__custom_eight_,
-  nine: global.fifthtry_github_io_admint_cs_colors__custom_nine_,
-  ten: global.fifthtry_github_io_admint_cs_colors__custom_ten_
-}));
-fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs__main", fastn.recordInstance({
-  background: global.fifthtry_github_io_admint_cs_colors__background_,
-  border: global.fifthtry_github_io_admint_cs_colors__border_,
-  border_strong: global.fifthtry_github_io_admint_cs_colors__border_strong_,
-  text: global.fifthtry_github_io_admint_cs_colors__text_,
-  text_strong: global.fifthtry_github_io_admint_cs_colors__text_strong_,
-  shadow: global.fifthtry_github_io_admint_cs_colors__shadow_,
-  scrim: global.fifthtry_github_io_admint_cs_colors__scrim_,
-  cta_primary: global.fifthtry_github_io_admint_cs_colors__cta_primary_,
-  cta_secondary: global.fifthtry_github_io_admint_cs_colors__cta_secondary_,
-  cta_tertiary: global.fifthtry_github_io_admint_cs_colors__cta_tertiary_,
-  cta_danger: global.fifthtry_github_io_admint_cs_colors__cta_danger_,
-  accent: global.fifthtry_github_io_admint_cs_colors__accent_,
-  error: global.fifthtry_github_io_admint_cs_colors__error_btb_,
-  success: global.fifthtry_github_io_admint_cs_colors__success_btb_,
-  info: global.fifthtry_github_io_admint_cs_colors__info_btb_,
-  warning: global.fifthtry_github_io_admint_cs_colors__warning_btb_,
-  custom: global.fifthtry_github_io_admint_cs_colors__custom_
-}));
-fastn_utils.createNestedObject(global, "admint_io_assets__files.static.something_lost.png", fastn.recordInstance({
-  light: "-/admint.io/static/something-lost.png",
-  dark: "-/admint.io/static/something-lost.png"
-}));
-fastn_utils.createNestedObject(global, "admint_io_common_fonts__title_404_type", fastn.recordInstance({
-  size: fastn_dom.FontSize.Px(36),
-  line_height: fastn_dom.FontSize.Px(40),
-  letter_spacing: fastn_dom.FontSize.Px(0),
-  weight: 400,
-  font_family: fastn.mutableList(["'Helvetica Neue'",
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#faf8f4");
+  record.set("dark", "#faf8f4");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__step_1_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FFFFFF");
+  record.set("dark", "#FFFFFF");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__step_2_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#f4f4f4");
+  record.set("dark", "#f4f4f4");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__overlay_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "rgba(0, 0, 0, 0.3)");
+  record.set("dark", "rgba(0, 0, 0, 0.3)");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__code_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#eaeaea");
+  record.set("dark", "#2B303B");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__background_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__base_);
+  record.set("step_1", global.fifthtry_github_io_admint_cs_colors__step_1_);
+  record.set("step_2", global.fifthtry_github_io_admint_cs_colors__step_2_);
+  record.set("overlay", global.fifthtry_github_io_admint_cs_colors__overlay_);
+  record.set("code", global.fifthtry_github_io_admint_cs_colors__code_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#3fb488");
+  record.set("dark", "#3fb488");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__border_strong_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#D9D9D9");
+  record.set("dark", "#3e0306");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#7d8180");
+  record.set("dark", "#7d8180");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__text_strong_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#7d8180");
+  record.set("dark", "#7d8180");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__shadow_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#6f0100");
+  record.set("dark", "#6f0100");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__scrim_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#393939");
+  record.set("dark", "#393939");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#3fb488");
+  record.set("dark", "#3fb488");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_hover_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#8c2702");
+  record.set("dark", "#8c2702");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_pressed_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#611c03");
+  record.set("dark", "#611c03");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#faad7b");
+  record.set("dark", "#faad7b");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_focused_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#611c03");
+  record.set("dark", "#611c03");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#a53006");
+  record.set("dark", "#a53006");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FFFFFF");
+  record.set("dark", "#FFFFFF");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_text_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FFFFFF");
+  record.set("dark", "#FFFFFF");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_border_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#a53006");
+  record.set("dark", "#a53006");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_primary_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__cta_primary_base_);
+  record.set("hover", global.fifthtry_github_io_admint_cs_colors__cta_primary_hover_);
+  record.set("pressed", global.fifthtry_github_io_admint_cs_colors__cta_primary_pressed_);
+  record.set("disabled", global.fifthtry_github_io_admint_cs_colors__cta_primary_disabled_);
+  record.set("focused", global.fifthtry_github_io_admint_cs_colors__cta_primary_focused_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__cta_primary_border_);
+  record.set("border_disabled", global.fifthtry_github_io_admint_cs_colors__cta_primary_border_disabled_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__cta_primary_text_);
+  record.set("text_disabled", global.fifthtry_github_io_admint_cs_colors__cta_primary_text_disabled_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#EF8435");
+  record.set("dark", "#EF8435");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_hover_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#D77730");
+  record.set("dark", "#D77730");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_pressed_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#BF6A2A");
+  record.set("dark", "#BF6A2A");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#777777");
+  record.set("dark", "#777777");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_focused_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#B36328");
+  record.set("dark", "#B36328");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#F3A063");
+  record.set("dark", "#F3A063");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FFFFFF");
+  record.set("dark", "#FFFFFF");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_text_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FFFFFF");
+  record.set("dark", "#FFFFFF");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_border_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#F3A063");
+  record.set("dark", "#F3A063");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_secondary_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__cta_secondary_base_);
+  record.set("hover", global.fifthtry_github_io_admint_cs_colors__cta_secondary_hover_);
+  record.set("pressed", global.fifthtry_github_io_admint_cs_colors__cta_secondary_pressed_);
+  record.set("disabled", global.fifthtry_github_io_admint_cs_colors__cta_secondary_disabled_);
+  record.set("focused", global.fifthtry_github_io_admint_cs_colors__cta_secondary_focused_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__cta_secondary_border_);
+  record.set("border_disabled", global.fifthtry_github_io_admint_cs_colors__cta_secondary_border_disabled_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__cta_secondary_text_);
+  record.set("text_disabled", global.fifthtry_github_io_admint_cs_colors__cta_secondary_text_disabled_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#EBE8E5");
+  record.set("dark", "#EBE8E5");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_hover_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#D4D1CE");
+  record.set("dark", "#D4D1CE");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_pressed_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#BCBAB7");
+  record.set("dark", "#BCBAB7");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#F9F8F7");
+  record.set("dark", "#F9F8F7");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_focused_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#B0AEAC");
+  record.set("dark", "#B0AEAC");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#B0AEAC");
+  record.set("dark", "#B0AEAC");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#333333");
+  record.set("dark", "#333333");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_text_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#333333");
+  record.set("dark", "#333333");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_border_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#B0AEAC");
+  record.set("dark", "#B0AEAC");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_tertiary_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_base_);
+  record.set("hover", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_hover_);
+  record.set("pressed", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_pressed_);
+  record.set("disabled", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_disabled_);
+  record.set("focused", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_focused_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_border_);
+  record.set("border_disabled", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_border_disabled_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_text_);
+  record.set("text_disabled", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_text_disabled_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#f9e4e1");
+  record.set("dark", "#f9e4e1");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_hover_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#f1bdb6");
+  record.set("dark", "#f1bdb6");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_pressed_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#d46a63");
+  record.set("dark", "#d46a63");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#faeceb");
+  record.set("dark", "#faeceb");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_focused_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#d97973");
+  record.set("dark", "#d97973");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#e9968c");
+  record.set("dark", "#E9968C");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FFFBFE");
+  record.set("dark", "#1C1B1F");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_text_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FFFBFE");
+  record.set("dark", "#1C1B1F");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_border_disabled_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#e9968c");
+  record.set("dark", "#E9968C");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__cta_danger_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__cta_danger_base_);
+  record.set("hover", global.fifthtry_github_io_admint_cs_colors__cta_danger_hover_);
+  record.set("pressed", global.fifthtry_github_io_admint_cs_colors__cta_danger_pressed_);
+  record.set("disabled", global.fifthtry_github_io_admint_cs_colors__cta_danger_disabled_);
+  record.set("focused", global.fifthtry_github_io_admint_cs_colors__cta_danger_focused_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__cta_danger_border_);
+  record.set("border_disabled", global.fifthtry_github_io_admint_cs_colors__cta_danger_border_disabled_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__cta_danger_text_);
+  record.set("text_disabled", global.fifthtry_github_io_admint_cs_colors__cta_danger_text_disabled_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_primary_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#a53006");
+  record.set("dark", "#a53006");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_secondary_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#EF8435");
+  record.set("dark", "#EF8435");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_tertiary_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#ffc136");
+  record.set("dark", "#ffc136");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__accent_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("primary", global.fifthtry_github_io_admint_cs_colors__accent_primary_);
+  record.set("secondary", global.fifthtry_github_io_admint_cs_colors__accent_secondary_);
+  record.set("tertiary", global.fifthtry_github_io_admint_cs_colors__accent_tertiary_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#F9E4E1");
+  record.set("dark", "#F9E4E1");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#D84836");
+  record.set("dark", "#D84836");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#E9968C");
+  record.set("dark", "#E9968C");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__error_btb_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__error_base_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__error_text_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__error_border_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#DCEFE4");
+  record.set("dark", "#DCEFE4");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#3E8D61");
+  record.set("dark", "#3E8D61");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#95D0AF");
+  record.set("dark", "#95D0AF");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__success_btb_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__success_base_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__success_text_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__success_border_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__info_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#DAE7FB");
+  record.set("dark", "#DAE7FB");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__info_btb_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__info_base_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__info_base_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__info_base_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_base_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#FDF7F1");
+  record.set("dark", "#FDF7F1");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_text_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#E78B3E");
+  record.set("dark", "#E78B3E");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_border_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#F2C097");
+  record.set("dark", "#F2C097");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__warning_btb_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("base", global.fifthtry_github_io_admint_cs_colors__warning_base_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__warning_text_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__warning_border_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_one_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#000000");
+  record.set("dark", "#000000");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_two_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#c8c8c8");
+  record.set("dark", "#c8c8c8");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_three_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#c9efde");
+  record.set("dark", "#c9efde");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_four_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#3fb488");
+  record.set("dark", "#3fb488");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_five_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#eb57be");
+  record.set("dark", "#eb57be");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_six_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#ef8dd6");
+  record.set("dark", "#ef8dd6");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_seven_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#7564be");
+  record.set("dark", "#7564be");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_eight_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#d554b3");
+  record.set("dark", "#d554b3");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_nine_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#54595f");
+  record.set("dark", "#54595f");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_ten_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "#0a0a0a");
+  record.set("dark", "#0a0a0a");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs_colors__custom_", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("one", global.fifthtry_github_io_admint_cs_colors__custom_one_);
+  record.set("two", global.fifthtry_github_io_admint_cs_colors__custom_two_);
+  record.set("three", global.fifthtry_github_io_admint_cs_colors__custom_three_);
+  record.set("four", global.fifthtry_github_io_admint_cs_colors__custom_four_);
+  record.set("five", global.fifthtry_github_io_admint_cs_colors__custom_five_);
+  record.set("six", global.fifthtry_github_io_admint_cs_colors__custom_six_);
+  record.set("seven", global.fifthtry_github_io_admint_cs_colors__custom_seven_);
+  record.set("eight", global.fifthtry_github_io_admint_cs_colors__custom_eight_);
+  record.set("nine", global.fifthtry_github_io_admint_cs_colors__custom_nine_);
+  record.set("ten", global.fifthtry_github_io_admint_cs_colors__custom_ten_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "fifthtry_github_io_admint_cs__main", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("background", global.fifthtry_github_io_admint_cs_colors__background_);
+  record.set("border", global.fifthtry_github_io_admint_cs_colors__border_);
+  record.set("border_strong", global.fifthtry_github_io_admint_cs_colors__border_strong_);
+  record.set("text", global.fifthtry_github_io_admint_cs_colors__text_);
+  record.set("text_strong", global.fifthtry_github_io_admint_cs_colors__text_strong_);
+  record.set("shadow", global.fifthtry_github_io_admint_cs_colors__shadow_);
+  record.set("scrim", global.fifthtry_github_io_admint_cs_colors__scrim_);
+  record.set("cta_primary", global.fifthtry_github_io_admint_cs_colors__cta_primary_);
+  record.set("cta_secondary", global.fifthtry_github_io_admint_cs_colors__cta_secondary_);
+  record.set("cta_tertiary", global.fifthtry_github_io_admint_cs_colors__cta_tertiary_);
+  record.set("cta_danger", global.fifthtry_github_io_admint_cs_colors__cta_danger_);
+  record.set("accent", global.fifthtry_github_io_admint_cs_colors__accent_);
+  record.set("error", global.fifthtry_github_io_admint_cs_colors__error_btb_);
+  record.set("success", global.fifthtry_github_io_admint_cs_colors__success_btb_);
+  record.set("info", global.fifthtry_github_io_admint_cs_colors__info_btb_);
+  record.set("warning", global.fifthtry_github_io_admint_cs_colors__warning_btb_);
+  record.set("custom", global.fifthtry_github_io_admint_cs_colors__custom_);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "admint_io_assets__files.static_something_lost_png", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("light", "-/admint.io/static/something-lost.png");
+  record.set("dark", "-/admint.io/static/something-lost.png");
+  return record;
+}());
+fastn_utils.createNestedObject(global, "admint_io_common_fonts__title_404_type", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("size", fastn_dom.FontSize.Px(36));
+  record.set("line_height", fastn_dom.FontSize.Px(40));
+  record.set("letter_spacing", fastn_dom.FontSize.Px(0));
+  record.set("weight", 400);
+  record.set("font_family", fastn.mutableList(["'Helvetica Neue'",
   "Helvetica",
   "Arial",
-  "sans-serif"])
-}));
-fastn_utils.createNestedObject(global, "admint_io_common_fonts__title_404", fastn.recordInstance({
-  desktop: global.admint_io_common_fonts__title_404_type,
-  mobile: global.admint_io_common_fonts__title_404_type
-}));
-fastn_utils.createNestedObject(global, "admint_io_common_fonts__body_404_type", fastn.recordInstance({
-  size: fastn_dom.FontSize.Px(22),
-  line_height: fastn_dom.FontSize.Px(28),
-  letter_spacing: fastn_dom.FontSize.Px(0),
-  weight: 300,
-  font_family: fastn.mutableList(["'Helvetica Neue'",
+  "sans-serif"]));
+  return record;
+}());
+fastn_utils.createNestedObject(global, "admint_io_common_fonts__title_404", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("desktop", global.admint_io_common_fonts__title_404_type);
+  record.set("mobile", global.admint_io_common_fonts__title_404_type);
+  return record;
+}());
+fastn_utils.createNestedObject(global, "admint_io_common_fonts__body_404_type", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("size", fastn_dom.FontSize.Px(22));
+  record.set("line_height", fastn_dom.FontSize.Px(28));
+  record.set("letter_spacing", fastn_dom.FontSize.Px(0));
+  record.set("weight", 300);
+  record.set("font_family", fastn.mutableList(["'Helvetica Neue'",
   "Helvetica",
   "Arial",
-  "sans-serif"])
-}));
-fastn_utils.createNestedObject(global, "admint_io_common_fonts__body_404", fastn.recordInstance({
-  desktop: global.admint_io_common_fonts__body_404_type,
-  mobile: global.admint_io_common_fonts__body_404_type
-}));
-let admint_io_404___not_found_page = function (parent, inherited, args)
+  "sans-serif"]));
+  return record;
+}());
+fastn_utils.createNestedObject(global, "admint_io_common_fonts__body_404", function () {
+  let record = fastn.recordInstance({
+  });
+  record.set("desktop", global.admint_io_common_fonts__body_404_type);
+  record.set("mobile", global.admint_io_common_fonts__body_404_type);
+  return record;
+}());
+let admint_io_404__not_found_page = function (parent, inherited, args)
 {
   let __fastn_super_package_name__ = __fastn_package_name__;
   __fastn_package_name__ = "admint_io";
@@ -1827,7 +4074,7 @@ let admint_io_404___not_found_page = function (parent, inherited, args)
     parenti0.setProperty(fastn_dom.PropertyKind.Spacing, fastn_dom.Spacing.Fixed(fastn_dom.Length.Px(20)), inherited);
     parenti0.setProperty(fastn_dom.PropertyKind.Children, fastn.mutableList([function (root, inherited) {
       let rooti0 = fastn_dom.createKernel(root, fastn_dom.ElementKind.Image);
-      rooti0.setProperty(fastn_dom.PropertyKind.ImageSrc, global.admint_io_assets__files.get("static").get("something_lost").get("png"), inherited);
+      rooti0.setProperty(fastn_dom.PropertyKind.ImageSrc, global.admint_io_assets__files.get("static_something_lost_png"), inherited);
       rooti0.setProperty(fastn_dom.PropertyKind.Width, fastn_dom.Resizing.Fixed(fastn_dom.Length.Px(500)), inherited);
     },
     function (root, inherited) {
@@ -1853,7 +4100,7 @@ let admint_io_404___not_found_page = function (parent, inherited, args)
     __fastn_package_name__ = __fastn_super_package_name__;
   }
 }
-global["admint_io_404___not_found_page"] = admint_io_404___not_found_page;
+global["admint_io_404__not_found_page"] = admint_io_404__not_found_page;
 fastn_dom.codeData.availableThemes["coldark-theme.dark"] = "code-theme-9A3284FD117DFF7CFD432FF860A5E14169FA592BC3DA4F5E8A6975143F5EA07F.css";
 fastn_dom.codeData.availableThemes["coldark-theme.light"] = "code-theme-99CD7B013C96C4632F0AEA39AC265387B814AE85A7D33666A4AE4BEFF59016D0.css";
 fastn_dom.codeData.availableThemes["coy-theme"] = "code-theme-B3AEA322EADEDA61F0E219845A0E9C8E73F6345E49362B46E6F52CEE40471248.css";
@@ -1864,8 +4111,8 @@ fastn_dom.codeData.availableThemes["duotone-theme.forest"] = "code-theme-256C21B
 fastn_dom.codeData.availableThemes["duotone-theme.light"] = "code-theme-0800A18B1822D6AFDAF807CF840379A2DB3483A1F058CA29FBCFB3815CA76148.css";
 fastn_dom.codeData.availableThemes["duotone-theme.sea"] = "code-theme-9A45313F167DBD90654BFD5BB3BC0BDF6AE447485C30B0389ADA7B49C069E46A.css";
 fastn_dom.codeData.availableThemes["duotone-theme.space"] = "code-theme-4DD8479BE14A755645BC09FF433FB70EB4CB28F0CBF3CA98DCB71B244B85B194.css";
-fastn_dom.codeData.availableThemes["fastn-theme.dark"] = "code-theme-F614177D3155EA8E915B35A3445175DC7C96D02FBC621F8AFD0FCCC417ED8A43.css";
-fastn_dom.codeData.availableThemes["fastn-theme.light"] = "code-theme-B8645DE281A38A3068C56919DE1BB0511696A1EE8002C5088748DA0BAC0806E6.css";
+fastn_dom.codeData.availableThemes["fastn-theme.dark"] = "code-theme-CFBB665E50E0439263BF0F3D59B1F0F20F40F379C81B1B14AA9E16DDF70F70E6.css";
+fastn_dom.codeData.availableThemes["fastn-theme.light"] = "code-theme-96E503EA0E8F80C5DDF81545C9B1A40DE4CDB7CD8F52664F747FD9E7BB0207B8.css";
 fastn_dom.codeData.availableThemes["fire.light"] = "code-theme-A352AF572179AB980583D41BC41ADDBA36C4C17757A34C1C6AAAF2C253E25CE3.css";
 fastn_dom.codeData.availableThemes["gruvbox-theme.dark"] = "code-theme-B68AA27E05B319F04A9CD747AADBF9B9CD791E040DEC519AE9544B4FF65DDBAC.css";
 fastn_dom.codeData.availableThemes["gruvbox-theme.light"] = "code-theme-06E6F84E43C61CB1653D9F4FACD46B7EBCB3CD8A48EFAEF2E5BE3E9E9212D1E6.css";

@@ -2,6 +2,7 @@
 
 -- fastn.package: admint.io
 favicon: https://admint.io/favicon.ico
+zip: https://codeload.github.com/admint-io/admintftdwebsite/zip/refs/heads/main
 
 
 
@@ -10,7 +11,7 @@ favicon: https://admint.io/favicon.ico
 -- fastn.dependency: fastn-community.github.io/roboto-font
 -- fastn.dependency: fifthtry.github.io/montserrat
 -- fastn.dependency: fifthtry.github.io/admint-typography
--- fastn.dependency: fifthtry.github.io/lato-font
+-- fastn.dependency: lato-font.fifthtry.site
 -- fastn.dependency: fastn-community.github.io/doc-site
 -- fastn.dependency: fastn-community.github.io/footer
 -- fastn.dependency: fastn-community.github.io/opensans-font
@@ -21,13 +22,13 @@ favicon: https://admint.io/favicon.ico
 
 # Home: index.html
 
-# Why NFTs?: why-nft/
+# Brand Tokens: why-nft/
 
-# About Us: about/
+# Features: learn/
 
 # Pricing: pricing/
 
-# Learn: learn/
+# About Us: about/
 
 # Docs: docs/
 skip: true
@@ -42,7 +43,7 @@ skip: true
 - Sneak Peak: docs/sneak-peak/
 - Join waitlist form: docs/join-waitlist-form/
 - Join waitlist popup: docs/join-waitlist-popup/
-- Why NFT?🚧: docs/why-nfts/
+- Brand Tokens: docs/why-nfts/
 - About Us: docs/about-us/
 - Our Team: docs/our-team/
 - Pricing🚧: docs/pricing/

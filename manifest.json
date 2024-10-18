@@ -1,0 +1,841 @@
+{
+  "files": {
+    "404.ftd": {
+      "name": "404.ftd",
+      "checksum": "104B238944C9FB9262446AAA34F73BF28E6F705E0367F8D84A648D857AE7EDE5",
+      "size": 977
+    },
+    "CNAME": {
+      "name": "CNAME",
+      "checksum": "B3EF570C92B50A42F08E883B99A521A1F9FB2A8EAD1B9A4053B19E3C128F084D",
+      "size": 10
+    },
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "28EC8DABB6B02AC612FF1C0471EC1D9B29A8ADE4E2B9C628D692E129A7E06435",
+      "size": 1656
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "E888CCC50ED5265D3BCE8182A3C6EA2FC63A5D2DCDBF1D5C515BDC489591B20F",
+      "size": 95
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_",
+      "checksum": "8973E16F3943E930DFFC0449C7460581BB22CCE86D67E5647B29606746BB1441",
+      "size": 59770
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_about_": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_about_",
+      "checksum": "16209AF6FB80E83BE2A06EBD4DB8CA0B84A9988F821DEFEB896F7069E8445BD9",
+      "size": 9272
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_assets": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_assets",
+      "checksum": "0F2D570C13E6A8D57FED3B004442810AC750D1DB4355381304120019ADAFA855",
+      "size": 305
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_common": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_common",
+      "checksum": "B03757CACE57D06EDE917A773CA114E259501AB12EF9CAD8A14B603BE4A93F8D",
+      "size": 13683
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_common_fonts": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_common_fonts",
+      "checksum": "735AC462B8FC9D06DD6DEF4C4D109453EBD89E7D58BE77D4840198ECDD4A1DAA",
+      "size": 179956
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_learn_": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_learn_",
+      "checksum": "F571F1820162DDFC05BC3D9E1E9E7B7965C7726019FB976D11A88233653FBB4B",
+      "size": 16692
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_learn_advertising-web-3-0_": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_learn_advertising-web-3-0_",
+      "checksum": "E8816AAA592412FCFBAC90CC2CDE87E1E147E77049E3BF020C09A77ABE45BCEF",
+      "size": 11793
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_learn_brand-campaigns_": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_learn_brand-campaigns_",
+      "checksum": "ED4CCE011AB2AE3A2271CF33F37C3E47B9E80B5FB807C71291D6F05C32079BA6",
+      "size": 9462
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_lib": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/admint.io_lib",
+      "checksum": "5EA7F529CE7D0BB96AF3BC8578259C915338B4C5802B9455551288547A9B6521",
+      "size": 687257
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fastn-community.github.io_opensans-font_assets": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fastn-community.github.io_opensans-font_assets",
+      "checksum": "82CF26856AF5F997A7642B26118AA78B6B2C28CF40E8DDCB38DE15DFB5529D8E",
+      "size": 988
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fastn-community.github.io_roboto-font_assets": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fastn-community.github.io_roboto-font_assets",
+      "checksum": "97806E5EC22E2C1A1D4C051242F7589519F0A312A652D7DAEED3CC11D7CBC6A3",
+      "size": 975
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fastn_processors": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fastn_processors",
+      "checksum": "F3FD1CA087458899F1322DA52FB9B1D4221C8D7BFF77E4C11FB49D91C6E943FC",
+      "size": 15389
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-cs": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-cs",
+      "checksum": "B00CF9C702233752C4A6F0B7C40F1EAD39694FE54B1A9F6DA6F7C079EFBBF541",
+      "size": 103171
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-cs_colors": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-cs_colors",
+      "checksum": "A73824DFEA2E4A92B641201020B4227022023A650BED2B6DE5AE7140A339564A",
+      "size": 59643
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-nunito-font_assets": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-nunito-font_assets",
+      "checksum": "3F345C8ECD2D97837DB9368248AAEBB1DC056F314399631BF6DCC0EE28E4DC1F",
+      "size": 1639
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-typography": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_admint-typography",
+      "checksum": "1A14931B81B13FCB0B256875AC01F07F76A6F9E65B3A1BA111FB2D7C996A4C0B",
+      "size": 106459
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_inter-font_assets": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_inter-font_assets",
+      "checksum": "12992B8DFD6783FE3869CAF9D028C67A401242372BF2BE933F3DE91220029026",
+      "size": 956
+    },
+    "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_montserrat_assets": {
+      "name": "_Users_shank_Documents_GitHub_admintftdwebsite/fifthtry.github.io_montserrat_assets",
+      "checksum": "50B257012D218873752365DEE099E8905E3EE9C96DE9D3C1511A1D6C6D2B2259",
+      "size": 971
+    },
+    "_config.yml": {
+      "name": "_config.yml",
+      "checksum": "A42D91290C93B5F17412C3B346737EA1C796E5D287306758AFE8B20470119D80",
+      "size": 21
+    },
+    "about.ftd": {
+      "name": "about.ftd",
+      "checksum": "E9C33E77728FA6E81C7E1F7EF42F150658A38999991DB0E8E9694886C32A9359",
+      "size": 2225
+    },
+    "common/fonts.ftd": {
+      "name": "common/fonts.ftd",
+      "checksum": "05D2993ECB65D5E710A07EBB268B28D0D70C549702027F6251F133D22C013A8C",
+      "size": 24673
+    },
+    "common/index.ftd": {
+      "name": "common/index.ftd",
+      "checksum": "41DAD48C744160CC61A14AD91B1A751DD8199684DF7FE4DE689473F402502833",
+      "size": 2892
+    },
+    "doc-site-example.png": {
+      "name": "doc-site-example.png",
+      "checksum": "611E21D16829D0FACDB5D2C21ABA2ADF95BF7359DAFA16FCE1351F0AC0E5C44B",
+      "size": 90059
+    },
+    "docs/about-us.ftd": {
+      "name": "docs/about-us.ftd",
+      "checksum": "63CE0D80F89F459B997434C116855C09CEE9B4740437266B4760F2E5FC249CA2",
+      "size": 3330
+    },
+    "docs/advertisement-card.ftd": {
+      "name": "docs/advertisement-card.ftd",
+      "checksum": "36A99EBF44C44B193D83CEE48A3032721B606FFE7B95A677391482D27491533A",
+      "size": 1836
+    },
+    "docs/advertisement-cards.ftd": {
+      "name": "docs/advertisement-cards.ftd",
+      "checksum": "D055A5F1B2F30E2787E595BE63F54854D4BE1F84CD51AC49EED81DB7B1B72950",
+      "size": 5230
+    },
+    "docs/advertising-web-3-0.ftd": {
+      "name": "docs/advertising-web-3-0.ftd",
+      "checksum": "079A435C3A1DF7970859507795BCD93E08E368D3D2531F7706BE7F203C9C2058",
+      "size": 564
+    },
+    "docs/blog.ftd": {
+      "name": "docs/blog.ftd",
+      "checksum": "AF9B337D422E373A4E124941924AEC57806CF2AD6F84BF94ABC600A4EA4F969F",
+      "size": 549
+    },
+    "docs/brand-campaign.ftd": {
+      "name": "docs/brand-campaign.ftd",
+      "checksum": "ADF5EF2798B7255B7E3238FFC9F440B33231A84AA831B635CA190A14CEB00126",
+      "size": 559
+    },
+    "docs/carousel-2.ftd": {
+      "name": "docs/carousel-2.ftd",
+      "checksum": "CB33256CB8019DA64B17512FDBFC919990C551675479047AFAB586F711C9BDA8",
+      "size": 7162
+    },
+    "docs/carousel.ftd": {
+      "name": "docs/carousel.ftd",
+      "checksum": "16C87C864B7057838314821F3B9E6AC33369CE7118F48E0F9B2B042242208752",
+      "size": 7015
+    },
+    "docs/faq.ftd": {
+      "name": "docs/faq.ftd",
+      "checksum": "FB76AFF91F31B8F46FB5433CBCF11CCFD54FF8E3EF7E779B15E656782B466739",
+      "size": 4082
+    },
+    "docs/footer.ftd": {
+      "name": "docs/footer.ftd",
+      "checksum": "40105F62B4C30FD047923B023B4E9574F5120FAA19DF14668191A17A5FA756E4",
+      "size": 2409
+    },
+    "docs/help-banner.ftd": {
+      "name": "docs/help-banner.ftd",
+      "checksum": "F5CF40DDADBB0F16BB95D1F8CED809BE01CE22CAD0627A1D565923A7A44FA48B",
+      "size": 2219
+    },
+    "docs/hero.ftd": {
+      "name": "docs/hero.ftd",
+      "checksum": "C3E9F937EFBA70F8E9A100EECF7CA494A9724641164107D30BBE93FBD1DCF235",
+      "size": 1351
+    },
+    "docs/how-it-works.ftd": {
+      "name": "docs/how-it-works.ftd",
+      "checksum": "FE6F250253B8D929967DD90566D6ABD2E5800ADE95A3FF0009F3ACDD3F5DECE3",
+      "size": 2427
+    },
+    "docs/index.ftd": {
+      "name": "docs/index.ftd",
+      "checksum": "237D03D3DDE49B67E67FD948C0A66B5177CDF2ABD61B21201E606956C8B80EFC",
+      "size": 2187
+    },
+    "docs/join-waitlist-form.ftd": {
+      "name": "docs/join-waitlist-form.ftd",
+      "checksum": "63AE49DAB3A254719D8FF351769E9A25A666E9BF24852B81F6905287A48557BC",
+      "size": 2545
+    },
+    "docs/join-waitlist-popup.ftd": {
+      "name": "docs/join-waitlist-popup.ftd",
+      "checksum": "D123787BDBC88C34E84AAB7D3A29BD7C3A5AA3ECBC8B5D2D51583603A11A938A",
+      "size": 2971
+    },
+    "docs/navbar.ftd": {
+      "name": "docs/navbar.ftd",
+      "checksum": "9B4CACDE71448302F109E47D6D7DB3C7F9392D6598AB6D62F8F9BC5DDBEE6AC5",
+      "size": 1826
+    },
+    "docs/our-team.ftd": {
+      "name": "docs/our-team.ftd",
+      "checksum": "26F2CF762A4F23FD4A1454CD9BF78E08C732A8723D13227AA85EE074C644B410",
+      "size": 2991
+    },
+    "docs/pricing.ftd": {
+      "name": "docs/pricing.ftd",
+      "checksum": "00E286B1BFC9A96C596ED4C8F1073ABD706617A3F85024FA057392103589D831",
+      "size": 552
+    },
+    "docs/privacy-policy.ftd": {
+      "name": "docs/privacy-policy.ftd",
+      "checksum": "22704C423661EF1F24E6F06529C09561F3C7A5F821F49BB2C144C7EB48921184",
+      "size": 559
+    },
+    "docs/site-footer.ftd": {
+      "name": "docs/site-footer.ftd",
+      "checksum": "53E39D15A32C6B22BC71E4EA75981FB046E214EF10C904998410DDB3F12E3963",
+      "size": 1319
+    },
+    "docs/sneak-peak.ftd": {
+      "name": "docs/sneak-peak.ftd",
+      "checksum": "CA775339D13066729E14376DA972559012F479AB2A4FAEA3589C0434FF358D0F",
+      "size": 2756
+    },
+    "docs/terms-conditions.ftd": {
+      "name": "docs/terms-conditions.ftd",
+      "checksum": "5F5BF62410D0E331DD3702E90AA8861BE69E33BD5C03C8463AA0CDB60DD34E59",
+      "size": 563
+    },
+    "docs/why-nfts.ftd": {
+      "name": "docs/why-nfts.ftd",
+      "checksum": "9A29D24FB535F21AEFBFE289A0140103453F6F5C7316E4CB1F086501636BED41",
+      "size": 553
+    },
+    "favicon.ico": {
+      "name": "favicon.ico",
+      "checksum": "43D2A91434FB6AD24222B5B6E4584A53D619D3EB066A6B15AC82A6E5FEE79DFB",
+      "size": 4286
+    },
+    "filter.css": {
+      "name": "filter.css",
+      "checksum": "ECEC288630FABFE20EDB9EA9EEC62FE3B01E776A4045A83645A753F33BDDB7B8",
+      "size": 37
+    },
+    "footer.ftd": {
+      "name": "footer.ftd",
+      "checksum": "C35FEC4409969FBD3D9E375FEF7FD3246456BF2EBD45A43D569C658A89549C8B",
+      "size": 2588
+    },
+    "functions.ftd": {
+      "name": "functions.ftd",
+      "checksum": "8CE66843D023319AF3DD037F05FD86F62222AC2C68526458FEA159EFC0A243F9",
+      "size": 811
+    },
+    "functions.js": {
+      "name": "functions.js",
+      "checksum": "24808EF4FD0AC103A5054CA8FE5731FCBDA97CE252039A5AD78F704D778CB3DA",
+      "size": 3887
+    },
+    "hero.ftd": {
+      "name": "hero.ftd",
+      "checksum": "0C243C64ABF0C002F3738F1761A3EE3BEAD3DF19F12B9516FD6877242742A2D2",
+      "size": 2070
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "9DA7C0FA8129703F80265B3899D74BE7CBEE39C08F5CB47B3092B96001D74E31",
+      "size": 13063
+    },
+    "learn/advertising-web-3-0.ftd": {
+      "name": "learn/advertising-web-3-0.ftd",
+      "checksum": "EC164202290469E0F4BB97336F57519C22D127B73861E419930615C457817FC0",
+      "size": 4871
+    },
+    "learn/brand-campaigns/index.ftd": {
+      "name": "learn/brand-campaigns/index.ftd",
+      "checksum": "526AA8343318955CE6D6A4279E2CB99925DE5D034381BF4AA82595CDF1767049",
+      "size": 4860
+    },
+    "learn/brand-campaigns/lorem-ipsum-is-simply-dummy-text-2.ftd": {
+      "name": "learn/brand-campaigns/lorem-ipsum-is-simply-dummy-text-2.ftd",
+      "checksum": "14AF5322EE0B7D7FF6EA2366A2E2C71FCC933E0D4D54846ADE6A2BD537E99CD3",
+      "size": 2773
+    },
+    "learn/brand-campaigns/lorem-ipsum-is-simply-dummy-text.ftd": {
+      "name": "learn/brand-campaigns/lorem-ipsum-is-simply-dummy-text.ftd",
+      "checksum": "9569A91C55EC32A5CAC065853F727F6067C276D8245F0CCE5F8EDAE7CAA41CB7",
+      "size": 2806
+    },
+    "learn/index.ftd": {
+      "name": "learn/index.ftd",
+      "checksum": "BDF3094BDCCF19E534FDACD3AE2147F5FE0DBDBA2F3DEFD6A80F8BA35E207B2B",
+      "size": 10515
+    },
+    "learn/metaverse-is-the-new-playground-for-advertisement-2.ftd": {
+      "name": "learn/metaverse-is-the-new-playground-for-advertisement-2.ftd",
+      "checksum": "EB6D98EC023533D3830A4768FC703CD46605B4A121CA64123BCF252018103B71",
+      "size": 4135
+    },
+    "learn/metaverse-is-the-new-playground-for-advertisement.ftd": {
+      "name": "learn/metaverse-is-the-new-playground-for-advertisement.ftd",
+      "checksum": "EC164202290469E0F4BB97336F57519C22D127B73861E419930615C457817FC0",
+      "size": 4871
+    },
+    "learn/no-search-results.ftd": {
+      "name": "learn/no-search-results.ftd",
+      "checksum": "A391BC21FE79754FBA256463F51F595FF2C85F9A060AD7E845FC1619A6CA1C36",
+      "size": 432
+    },
+    "learn/search-results.ftd": {
+      "name": "learn/search-results.ftd",
+      "checksum": "38EB968E61F2C3A6EFB95D397A975C6763452E5919E327A838EF9A478E2C1BF3",
+      "size": 1892
+    },
+    "lib.ftd": {
+      "name": "lib.ftd",
+      "checksum": "4C5D387BEBEF03EC818D83B7A6497CAB1177DC5BB772C84CB39996D1277CC9B6",
+      "size": 120176
+    },
+    "plan-selected.ftd": {
+      "name": "plan-selected.ftd",
+      "checksum": "07FFACB743D31490B498261B75E04EF86C3F94BE1638CAE023D5BD7519C1EF8F",
+      "size": 59
+    },
+    "pricing.ftd": {
+      "name": "pricing.ftd",
+      "checksum": "88829C288D730D83B97114AB4EC161C2E6FD58BABAF0F1CF46101D259787835A",
+      "size": 3883
+    },
+    "privacy-policy.ftd": {
+      "name": "privacy-policy.ftd",
+      "checksum": "EAE5C99FE82C19F3C1C138271E3F9EDDF28DAFEF0BE13F0CD554DA2F9AFC45DB",
+      "size": 18023
+    },
+    "static/about-us/Jaylah-Consejo.jpeg": {
+      "name": "static/about-us/Jaylah-Consejo.jpeg",
+      "checksum": "5E069F2F11F3FE64DBF9480BD8BE42A661121BD37DE39EC6ECB9801FAE25D1E3",
+      "size": 80390
+    },
+    "static/about-us/about-us.svg": {
+      "name": "static/about-us/about-us.svg",
+      "checksum": "781C32E90A1E50BC567B4A0FD21B8D790FFAAE45339DDB5D19029FBD149E91D6",
+      "size": 28627
+    },
+    "static/about-us/ben-peeri.jpg": {
+      "name": "static/about-us/ben-peeri.jpg",
+      "checksum": "8A70C403A95521427A4663BC128ADF6D8786242FD1C73C3426C584B1D77A068D",
+      "size": 14764
+    },
+    "static/about-us/hareesh.jpeg": {
+      "name": "static/about-us/hareesh.jpeg",
+      "checksum": "D498AC7426C9CBC989FB8D7A6E3AF82C69686CA1CD69F7592374E110718D7A71",
+      "size": 123611
+    },
+    "static/about-us/linkedin-green.svg": {
+      "name": "static/about-us/linkedin-green.svg",
+      "checksum": "F3F9110947BFBF66A55A5A179ADD4F4C1393A29A57DBFECA6A3215771B5BD29B",
+      "size": 928
+    },
+    "static/about-us/our-team.svg": {
+      "name": "static/about-us/our-team.svg",
+      "checksum": "72884696A5C1D0994D1FF1133C52BBCB302E953F7E26C1CC072A172E7477245C",
+      "size": 18027
+    },
+    "static/admint-logo-dark.svg": {
+      "name": "static/admint-logo-dark.svg",
+      "checksum": "1A1546375DC331EAFD2449502E917FB08BA2453B97F9854C18AED43AC1C4A221",
+      "size": 3729
+    },
+    "static/admint-logo.svg": {
+      "name": "static/admint-logo.svg",
+      "checksum": "1A1546375DC331EAFD2449502E917FB08BA2453B97F9854C18AED43AC1C4A221",
+      "size": 3729
+    },
+    "static/advertising/Transparent-Yet-Private.svg": {
+      "name": "static/advertising/Transparent-Yet-Private.svg",
+      "checksum": "4F64210EB17368D679A51B96CA7E522E906A91C079DA53A2B2A14656A0D23830",
+      "size": 15553
+    },
+    "static/advertising/article-window1.png": {
+      "name": "static/advertising/article-window1.png",
+      "checksum": "96819EEC00549EBD8875C4931EE3E5EA05F1CD2A3DAAD361AC75835845ED9C1F",
+      "size": 29502
+    },
+    "static/advertising/everyone-is-everywhere.svg": {
+      "name": "static/advertising/everyone-is-everywhere.svg",
+      "checksum": "07C4B60E36CDE1E96C19EAF3D1038205C41F27D6C3FD84B37B1B5C7BC9138D1F",
+      "size": 38366
+    },
+    "static/advertising/new-article-thumbnail.png": {
+      "name": "static/advertising/new-article-thumbnail.png",
+      "checksum": "A85C0E5DA19E9C4231D165D352BFB0E75DC2B0C9490D1E2A096374CDE2431942",
+      "size": 153373
+    },
+    "static/advertising/newData.svg": {
+      "name": "static/advertising/newData.svg",
+      "checksum": "B367533FD95F56AE3C83B44D0F263673D8FD70C631F7B57E3264F2034C4775BD",
+      "size": 48781
+    },
+    "static/advertising/paperclip.png": {
+      "name": "static/advertising/paperclip.png",
+      "checksum": "E8F4BA8A7DC01351146F0BEDB3A8B9E7FD474189F07C89F405AC4F3D4DAC9282",
+      "size": 845
+    },
+    "static/advertising/target-is-always-moving.svg": {
+      "name": "static/advertising/target-is-always-moving.svg",
+      "checksum": "BE90DB825917E57937A1DA50F9C32D2FEC103FBC825FD756AB2885C9933E6876",
+      "size": 28619
+    },
+    "static/blog/01-2048x1366.jpeg": {
+      "name": "static/blog/01-2048x1366.jpeg",
+      "checksum": "BB51A1FB4750978ABF1A2FB1D30BA222BE6273655EAA17B761E5BB2B019F161C",
+      "size": 317346
+    },
+    "static/blog/StockSnap.jpeg": {
+      "name": "static/blog/StockSnap.jpeg",
+      "checksum": "1360F0508B9346805A1B74C730BFFCD5BC250FD0312C8282C4CE4B3E2546CAA6",
+      "size": 66173
+    },
+    "static/blog/bridge.jpeg": {
+      "name": "static/blog/bridge.jpeg",
+      "checksum": "1360F0508B9346805A1B74C730BFFCD5BC250FD0312C8282C4CE4B3E2546CAA6",
+      "size": 66173
+    },
+    "static/carousel/Transparent-Yet-Private.svg": {
+      "name": "static/carousel/Transparent-Yet-Private.svg",
+      "checksum": "4F64210EB17368D679A51B96CA7E522E906A91C079DA53A2B2A14656A0D23830",
+      "size": 15553
+    },
+    "static/carousel/analytics-img-left.svg": {
+      "name": "static/carousel/analytics-img-left.svg",
+      "checksum": "AA8F8ED933C8BB1086DCEC427051D2F677CB388C06C9F28B30A106A8E0FFB6BB",
+      "size": 20072
+    },
+    "static/carousel/analytics-img-right.svg": {
+      "name": "static/carousel/analytics-img-right.svg",
+      "checksum": "43AE97D35CCF5C313A7146551A29177CD347B00A0276F33EBE2EA13FD2BF3553",
+      "size": 31535
+    },
+    "static/carousel/analytics-left-mob.svg": {
+      "name": "static/carousel/analytics-left-mob.svg",
+      "checksum": "427497F5BCBFF2428CFADC4592BEEB70F249B14225915B76D519FDDF9EB9645B",
+      "size": 19951
+    },
+    "static/carousel/analytics-right-mob.svg": {
+      "name": "static/carousel/analytics-right-mob.svg",
+      "checksum": "9547E43499FA93124436C41041EE2BED897757F8600A025016E9E9081C498455",
+      "size": 31375
+    },
+    "static/carousel/analyze.svg": {
+      "name": "static/carousel/analyze.svg",
+      "checksum": "6DDAD73A1DD77A68C16FAB9000777421D7A8AA4AC1164C7800B859B27C80838C",
+      "size": 34619
+    },
+    "static/carousel/dist-left-img.svg": {
+      "name": "static/carousel/dist-left-img.svg",
+      "checksum": "D047C49FBD1CC660F3099E64C724268184A1B2DB5D9A19085F904AFFC35989BB",
+      "size": 31456
+    },
+    "static/carousel/dist-left-mob.svg": {
+      "name": "static/carousel/dist-left-mob.svg",
+      "checksum": "578324EEB12761D08270559597CEDD839E249FBBBE564C0F23DF022C734EF21A",
+      "size": 31345
+    },
+    "static/carousel/dist-right-img.svg": {
+      "name": "static/carousel/dist-right-img.svg",
+      "checksum": "359810B16A6FB63412F955DFF800F54836EC5676477A1CA9E04CF2553B71D26E",
+      "size": 35827
+    },
+    "static/carousel/dist-right-mob.svg": {
+      "name": "static/carousel/dist-right-mob.svg",
+      "checksum": "F325B2A7FB4C328B997EE4DE71DAAE2730C53FBDE2EB0F1438DCD19CDBC313C0",
+      "size": 35649
+    },
+    "static/carousel/distribute.svg": {
+      "name": "static/carousel/distribute.svg",
+      "checksum": "ECC7668BA27DF684D45758DA21B9632E0FDB4A7D91EB75012D47E1FF26CE9247",
+      "size": 41036
+    },
+    "static/carousel/download.svg": {
+      "name": "static/carousel/download.svg",
+      "checksum": "720939CBEF6C7595701914CD85C97117CE2E7C8193E1A6CA98BE1C1A5A941ADF",
+      "size": 193
+    },
+    "static/carousel/fund-left-img.svg": {
+      "name": "static/carousel/fund-left-img.svg",
+      "checksum": "74AFD42D523E494EFA415549C04823058F6299BE0B655E09ED1138B5DF482FD3",
+      "size": 3016
+    },
+    "static/carousel/fund-left-mob.svg": {
+      "name": "static/carousel/fund-left-mob.svg",
+      "checksum": "062CF63473282088DC9DD7D4F4DEC525F1A918ADD2A1B4648C8DA4F2CEDF07F8",
+      "size": 2899
+    },
+    "static/carousel/fund-right-img.svg": {
+      "name": "static/carousel/fund-right-img.svg",
+      "checksum": "38CACCAA0D3E0385AFF511876EEDC467A4C9D1A30D0D37F12E284F65E74BEC9B",
+      "size": 26998
+    },
+    "static/carousel/fund-right-mob.svg": {
+      "name": "static/carousel/fund-right-mob.svg",
+      "checksum": "AC823C8DE820380D19B7254E7E80F1144C3FB7A0FE47712C3CEA8A16627122FD",
+      "size": 26855
+    },
+    "static/carousel/help-banner.svg": {
+      "name": "static/carousel/help-banner.svg",
+      "checksum": "26BDF0274E1C2424D708ACC9FCC68A980E1916C594C2248E515FF8CCE2553936",
+      "size": 51226
+    },
+    "static/carousel/how-it-works.svg": {
+      "name": "static/carousel/how-it-works.svg",
+      "checksum": "96E5184F456BB9D46AD8EDBA43AF554E06107CFB18C273099032BA75DBE39BAC",
+      "size": 2574
+    },
+    "static/carousel/keymedia.svg": {
+      "name": "static/carousel/keymedia.svg",
+      "checksum": "91F5BF52607DDF2207EBAE8699507393C4256CE1B8921EC2D08B948E0D89AB67",
+      "size": 16123
+    },
+    "static/carousel/left.svg": {
+      "name": "static/carousel/left.svg",
+      "checksum": "C28C7995A48C1B6E629D9DF2F56C8FDF3970116553D1BD29854058AE68C31EB2",
+      "size": 194
+    },
+    "static/carousel/lezgoo-img.svg": {
+      "name": "static/carousel/lezgoo-img.svg",
+      "checksum": "26BDF0274E1C2424D708ACC9FCC68A980E1916C594C2248E515FF8CCE2553936",
+      "size": 51226
+    },
+    "static/carousel/nft-left-img.svg": {
+      "name": "static/carousel/nft-left-img.svg",
+      "checksum": "5E0E95F81DAEBACE69F457D3A138A7B98CAF22A7F2BBE6F28F5B63621F40629A",
+      "size": 15061
+    },
+    "static/carousel/nft-left-mob.svg": {
+      "name": "static/carousel/nft-left-mob.svg",
+      "checksum": "CCCBD94BF40ECE2120F11C8E309E20E3BFA45EF31993B4C7B5F457EBC850CA2C",
+      "size": 14950
+    },
+    "static/carousel/nft-right-img.svg": {
+      "name": "static/carousel/nft-right-img.svg",
+      "checksum": "C5986C8CA610BDD6277D4247F2EE1148AC2B9621312D5B8AF8B9F9D1F2EADD15",
+      "size": 16297
+    },
+    "static/carousel/nft-right-mob.svg": {
+      "name": "static/carousel/nft-right-mob.svg",
+      "checksum": "1674E5766ABF977C720404F998C14810AB0C401571453F183CC063068A45AAAD",
+      "size": 16159
+    },
+    "static/carousel/planning-left-img.svg": {
+      "name": "static/carousel/planning-left-img.svg",
+      "checksum": "30FFD13A4EC812C47926490385A37249758A56FC4B44A840AAB394336653DD7C",
+      "size": 27423
+    },
+    "static/carousel/planning-left-mob.svg": {
+      "name": "static/carousel/planning-left-mob.svg",
+      "checksum": "1C80A1304AEC2146959B94896363D452B43430733A5391875D8A2DF456A681BE",
+      "size": 27287
+    },
+    "static/carousel/planning-right-img.svg": {
+      "name": "static/carousel/planning-right-img.svg",
+      "checksum": "FA2016DBB324417FFDFEFEA7BF4D1079FFF80CA85D76153DC4864D10969DDFD7",
+      "size": 12567
+    },
+    "static/carousel/planning-right-mob-new.svg": {
+      "name": "static/carousel/planning-right-mob-new.svg",
+      "checksum": "2A5B21B7702392DC54D42C23DDA6686851B67D9DCC31672804D22720567A419C",
+      "size": 12469
+    },
+    "static/carousel/right.svg": {
+      "name": "static/carousel/right.svg",
+      "checksum": "51253E9FCA5FF2FB7A57B5FF782BAD952CCFFBF4CA4BDA3AB08D5DA8097EC821",
+      "size": 196
+    },
+    "static/carousel/simple.svg": {
+      "name": "static/carousel/simple.svg",
+      "checksum": "9F04CA8A398044D6627F29C06384829866B5D7B78E620C30A9DE6E19D883F090",
+      "size": 21485
+    },
+    "static/carousel/sneak-bg.png": {
+      "name": "static/carousel/sneak-bg.png",
+      "checksum": "49EFD54ABC5FDCC44167F48EB090A247E8BFA25BBCA04B21852007709454D142",
+      "size": 19163
+    },
+    "static/carousel/sneak-peak.png": {
+      "name": "static/carousel/sneak-peak.png",
+      "checksum": "A96E68724E14390DF4256E1FE24A5B98FC5D23B4513DB983175CF6BA4BFFB8FB",
+      "size": 49943
+    },
+    "static/carousel/structured.svg": {
+      "name": "static/carousel/structured.svg",
+      "checksum": "396CD6449C0A1DAF4CC269FAFC17B0957B4E3B54ECEF5D17079D410776452209",
+      "size": 22741
+    },
+    "static/carousel/tab-highlight..svg": {
+      "name": "static/carousel/tab-highlight..svg",
+      "checksum": "79A46677DEC57EFC2A844ACD14825D28CF3DF44A00D07E8D60DC2974FD3A2605",
+      "size": 1378
+    },
+    "static/carousel/utility-left-img.svg": {
+      "name": "static/carousel/utility-left-img.svg",
+      "checksum": "445411232C277282305086327C111D450256FC61F1335A4974F5B51E63C3F32C",
+      "size": 23141
+    },
+    "static/carousel/utility-left-mob.svg": {
+      "name": "static/carousel/utility-left-mob.svg",
+      "checksum": "003E0AF4A2F7E1358C0D18801E7957888197B78757369C9E1EB2D79FDB3EA055",
+      "size": 23026
+    },
+    "static/carousel/utility-right-img.svg": {
+      "name": "static/carousel/utility-right-img.svg",
+      "checksum": "2BFA07A4C0710C2AD6C20687F1FC71DCF5492C9123FB053A2B64D754F0863B25",
+      "size": 23265
+    },
+    "static/carousel/utility-right-mob.svg": {
+      "name": "static/carousel/utility-right-mob.svg",
+      "checksum": "B769EAB36F25724EEC44F8E016D59BE0A3FC70B923996D46ED073D18069E51C6",
+      "size": 23114
+    },
+    "static/discount.svg": {
+      "name": "static/discount.svg",
+      "checksum": "B7853C7110545293EB0F4E60A86F3966FD940C8CF313CE47DFD2AE77B7ED4705",
+      "size": 1730
+    },
+    "static/faq/down.svg": {
+      "name": "static/faq/down.svg",
+      "checksum": "B9187FD9A0648640879483E41668FCF008E89E0099BF91FCF1EBFEBDE3688651",
+      "size": 560
+    },
+    "static/faq/up-fill.svg": {
+      "name": "static/faq/up-fill.svg",
+      "checksum": "6EC76135584B43FE3378CA7DDCABE2625DDF4E43554A047CC8E18042ED5CABD0",
+      "size": 549
+    },
+    "static/faq/up.svg": {
+      "name": "static/faq/up.svg",
+      "checksum": "6EC76135584B43FE3378CA7DDCABE2625DDF4E43554A047CC8E18042ED5CABD0",
+      "size": 549
+    },
+    "static/footer/admint-logo-footer.svg": {
+      "name": "static/footer/admint-logo-footer.svg",
+      "checksum": "9F76BBCB802D86DDB8CFDCE60FB623BA503DDB6E6B0A4266540908851A7AAE32",
+      "size": 14124
+    },
+    "static/footer/footer-hand-thumb.svg": {
+      "name": "static/footer/footer-hand-thumb.svg",
+      "checksum": "D13B4292705DAB9B5C2F40DF00210793941A942AABB655EC3D938F1E63DC08F7",
+      "size": 19142
+    },
+    "static/hamberger.svg": {
+      "name": "static/hamberger.svg",
+      "checksum": "720939CBEF6C7595701914CD85C97117CE2E7C8193E1A6CA98BE1C1A5A941ADF",
+      "size": 193
+    },
+    "static/help-banner.svg": {
+      "name": "static/help-banner.svg",
+      "checksum": "26BDF0274E1C2424D708ACC9FCC68A980E1916C594C2248E515FF8CCE2553936",
+      "size": 51226
+    },
+    "static/hero/banner-astronet.svg": {
+      "name": "static/hero/banner-astronet.svg",
+      "checksum": "5CA6911137F91B2D71469BB5A1C7B27B09AFAB315B60CEEE2E3FC5BA2F3E4323",
+      "size": 28235
+    },
+    "static/hero/banner-drone.svg": {
+      "name": "static/hero/banner-drone.svg",
+      "checksum": "A0A216434B3C752AA249D4501AEE3C37BB987274A16454DC3590AE17FCD9F1C9",
+      "size": 37405
+    },
+    "static/hero/web3-round.svg": {
+      "name": "static/hero/web3-round.svg",
+      "checksum": "2D16FBF3A06662CBF1B3CBA106FF4079AAC14A0AA0AE14F1DA42AA160D16143E",
+      "size": 1365
+    },
+    "static/highlight-tab-active.svg": {
+      "name": "static/highlight-tab-active.svg",
+      "checksum": "2C3D66348084E1A0C5852AB679E342B6F6DE13FFE6A7B00C566767D48DF71D29",
+      "size": 1366
+    },
+    "static/join-waitlist-form/down.svg": {
+      "name": "static/join-waitlist-form/down.svg",
+      "checksum": "82B0FF15A0043A13F50D0A7981FA3841CB102ADC29C304BA19ED8E03E36A1589",
+      "size": 248
+    },
+    "static/join-waitlist-form/waitlist.svg": {
+      "name": "static/join-waitlist-form/waitlist.svg",
+      "checksum": "BE04107633B0F720B34C5B0FDDECA176DAD77C2AF2DC0DA507770BC8E535CA88",
+      "size": 33556
+    },
+    "static/line.svg": {
+      "name": "static/line.svg",
+      "checksum": "A59EE805860C193D2B56A3F055815D2E008BC5694814FA9F96409F2FC15BFEEC",
+      "size": 180
+    },
+    "static/lorem-ipsum1.jpeg": {
+      "name": "static/lorem-ipsum1.jpeg",
+      "checksum": "58F5F78635BAAE787A151541D0D6B26AD107837ADA5B802AA609A6F2B7681E6F",
+      "size": 826510
+    },
+    "static/pricing/all-set.png": {
+      "name": "static/pricing/all-set.png",
+      "checksum": "B99C30A9654EA70A9C8B214477F17B299F9EA43B56F25C766ED18AB35D38E134",
+      "size": 32833
+    },
+    "static/pricing/dark-star.svg": {
+      "name": "static/pricing/dark-star.svg",
+      "checksum": "35834F7C54CC787A4BB2F560E5B56EC0565E26EB96B408E16AFBE1AA70ECB4AD",
+      "size": 1858
+    },
+    "static/pricing/light-star.svg": {
+      "name": "static/pricing/light-star.svg",
+      "checksum": "F6D97DDAAC29D59D86758EF4468AB2CD2D7667C9B105D92861126E90CFB44822",
+      "size": 1858
+    },
+    "static/pricing/next.svg": {
+      "name": "static/pricing/next.svg",
+      "checksum": "06A6A21104FA78BF92D6AAE727B62E97206E44043D83DEA42DF242E203187C10",
+      "size": 206
+    },
+    "static/pricing/plus.svg": {
+      "name": "static/pricing/plus.svg",
+      "checksum": "988D745938C07BC3611B95DF102092270B7EF8264FA6286218ACE8240A35A831",
+      "size": 1976
+    },
+    "static/pricing/success.svg": {
+      "name": "static/pricing/success.svg",
+      "checksum": "3B6257D578216DC1679675338589D7E9EE38F0A6CFB95FB95EF1F8B82AA32038",
+      "size": 263
+    },
+    "static/pricing/tab-highlight-white.svg": {
+      "name": "static/pricing/tab-highlight-white.svg",
+      "checksum": "65172C92DC099E5163D2781EA55B307AA3A9AC8379C6123C2A988AF2FCCCAB06",
+      "size": 1378
+    },
+    "static/pricing/tab-highlight.svg": {
+      "name": "static/pricing/tab-highlight.svg",
+      "checksum": "79A46677DEC57EFC2A844ACD14825D28CF3DF44A00D07E8D60DC2974FD3A2605",
+      "size": 1378
+    },
+    "static/privacy-policy.svg": {
+      "name": "static/privacy-policy.svg",
+      "checksum": "8D474A0E9422619CF810411C5C7765B6BF2B9205AC3DF95241D75E18D7718527",
+      "size": 14108
+    },
+    "static/search-icon.svg": {
+      "name": "static/search-icon.svg",
+      "checksum": "C4A90F5F45091C91565FF78BF7DE68260CA523118362CDA7DD88E265318BD145",
+      "size": 719
+    },
+    "static/something-lost.png": {
+      "name": "static/something-lost.png",
+      "checksum": "FA0483D6548B10C76A81EDC62798719BE4D3ACD8A6F40C19E2F824D751BA0F4E",
+      "size": 108225
+    },
+    "static/t&c.svg": {
+      "name": "static/t&c.svg",
+      "checksum": "B48840DBB92F06247F28B5D9B385F91DAC63F03FB6BF5012AD1F012372DA0A5A",
+      "size": 32825
+    },
+    "static/visa.svg": {
+      "name": "static/visa.svg",
+      "checksum": "6B7EE9FE70FF56FB9276D8F9B32C64EF8293CA28FDF1FF81CD8799EE27AFE753",
+      "size": 1260
+    },
+    "static/waitlist.svg": {
+      "name": "static/waitlist.svg",
+      "checksum": "BE04107633B0F720B34C5B0FDDECA176DAD77C2AF2DC0DA507770BC8E535CA88",
+      "size": 33556
+    },
+    "static/why-nfts/NFTs-Stack-Value.svg": {
+      "name": "static/why-nfts/NFTs-Stack-Value.svg",
+      "checksum": "49E1F0073327F1B68421CBC4E584CE267AD05BA7508D55DB17D0A9ACF024C933",
+      "size": 35242
+    },
+    "static/why-nfts/neft-offer-value.svg": {
+      "name": "static/why-nfts/neft-offer-value.svg",
+      "checksum": "1D6453EE99A3C83FF799012753B66D1D753EC4E7C6C2F718ECC644B97328CE10",
+      "size": 30830
+    },
+    "static/why-nfts/nft-awesome.svg": {
+      "name": "static/why-nfts/nft-awesome.svg",
+      "checksum": "DD42C00909BC22AEFAFD4C2016471A094E7DD8D9B6037748E6BFCF637DEAC324",
+      "size": 16673
+    },
+    "static/why-nfts/nft-lend-value.svg": {
+      "name": "static/why-nfts/nft-lend-value.svg",
+      "checksum": "E57264715BDD7400A9FB8155C82C80891E14B189FCE41A04CB4239F831A8F174",
+      "size": 9309
+    },
+    "static/why-nfts/nft-track-value.svg": {
+      "name": "static/why-nfts/nft-track-value.svg",
+      "checksum": "D58A4FC2B43296A82762C9F43B6C4B48D3A2D932D3561A36DC8BAAD60B9A5EC7",
+      "size": 20282
+    },
+    "static/why-nfts/nft-trade-value.svg": {
+      "name": "static/why-nfts/nft-trade-value.svg",
+      "checksum": "14DC782BB8B8B6489BA02AB93CA619B58575E7A075C05A36CD89375B3278FD21",
+      "size": 30273
+    },
+    "terms-conditions.ftd": {
+      "name": "terms-conditions.ftd",
+      "checksum": "D1DD507B3E31469FF655FA78C2196BEFF2A34758904B4EDFDC6D3ECDA2A82698",
+      "size": 11235
+    },
+    "verification-page.ftd": {
+      "name": "verification-page.ftd",
+      "checksum": "41F830148C24BADF536665FD608CFE8303EA53EDFF5C03FB6D67AD01A560148E",
+      "size": 57
+    },
+    "why-nft.ftd": {
+      "name": "why-nft.ftd",
+      "checksum": "C4A0C6F35687DFB68EFD5EC8A582A0914C1636946E862E6C95EF403ED0F3F070",
+      "size": 4259
+    }
+  },
+  "zip_url": "https://codeload.github.com/admint-io/admintftdwebsite/zip/refs/heads/main",
+  "checksum": "F420B2A5603A2654E20A139DF03DCFE2015CAA6FE16764B3363D4D17CC6D6B54"
+}

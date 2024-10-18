@@ -107,13 +107,7 @@ $current-stage: $stage
 -- ftd.container:
 margin-top.px: 24
 
--- ftd.checkbox:
-enabled: true
-checked: $tos-ischecked
-$on-click$: $ftd.set-bool($a = $tos-ischecked, v = $CHECKED)
-height.fixed.px: 16
-width.fixed.px: 16
-margin-right.px: 10
+-- checkbox:
 
 -- ftd.text: I have read and agree to the AdMint’s
 margin-left.px: 4
@@ -195,3 +189,17 @@ cta-link2: /admint.io
 src: $assets.files.static.pricing.all-set.png
 
 -- end: lib.page
+
+
+
+-- component checkbox: 
+
+-- ftd.checkbox:
+enabled: true
+checked: $tos-ischecked
+$on-click$: $ftd.set-bool($a = $tos-ischecked, v = $CHECKED)
+height.fixed.px: 16
+width.fixed.px: 16
+margin-right.px: 10
+
+-- end: checkbox
